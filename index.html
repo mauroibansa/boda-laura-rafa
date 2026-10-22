@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laura y Rafa · 13 de marzo de 2027</title>
+<meta name="description" content="Laura y Rafa se casan el 13 de marzo de 2027 en Hacienda Almoguera. Confirma tu asistencia.">
+<meta property="og:title" content="Laura y Rafa · ¡Nos casamos!">
+<meta property="og:description" content="13 de marzo de 2027 · Hacienda Almoguera">
+<meta property="og:image" content="img/acu.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Ephesis&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F3EA;--paper:#FCFAF4;--ink:#2E3B36;--text:#3D403C;--muted:#7F827A;--line:#C9C6B8;--teal:#5E8F8A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit;color:inherit}
+.script{font-family:'Ephesis',cursive;color:var(--ink);font-weight:400}
+.wrap{position:relative;max-width:1440px;margin:0 auto;overflow:hidden}
+.w{position:absolute;pointer-events:none;z-index:0;user-select:none}
+.mob{display:none}
+
+/* NAV */
+nav{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:26px 70px}
+nav .mono{font-family:'Ephesis';font-size:38px;color:var(--ink)}
+nav ul{display:flex;gap:40px;list-style:none;font-style:italic;font-size:19px;color:var(--ink);align-items:center}
+nav ul a.cta{background:var(--ink);color:var(--paper);padding:6px 22px;border-radius:30px}
+.burger{display:none;background:none;border:0;font-style:italic;color:var(--ink);font-size:18px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:30px 70px 20px}
+.hero .txt{position:relative;z-index:2;text-align:center}
+.hero h1{font-size:128px;line-height:1;white-space:nowrap}
+.hero h2{font-weight:500;font-style:italic;font-size:40px;color:var(--ink);margin-top:22px}
+.hero .sub{font-size:54px;margin-top:8px}
+.stroke{height:1px;background:var(--ink);opacity:.6;width:90px;margin:22px auto}
+.datebox{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:34px}
+.datebox .l{text-align:right;padding-right:30px;font-style:italic;font-size:25px}
+.datebox .r{text-align:left;padding-left:30px;font-style:italic;font-size:25px}
+.datebox .c{padding:10px 44px;text-align:center;border-left:1px solid var(--ink);border-right:1px solid var(--ink)}
+.datebox .d{font-size:78px;line-height:1;color:var(--ink);font-weight:500}
+.datebox .m{font-family:'Ephesis';font-size:42px;line-height:1;color:var(--ink)}
+.datebox .y{font-size:34px;color:var(--ink);font-weight:500}
+.hero .art{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.hero .art img{width:118%;max-width:none;margin-left:-6%;height:auto}
+
+.sep{height:150px;background:url(img/guirnalda.webp) center/auto 100% no-repeat}
+section{position:relative;padding:110px 90px;scroll-margin-top:20px}
+.head{position:relative;z-index:2;text-align:center;margin-bottom:60px}
+.head h2.script{font-size:84px;line-height:1}
+.head p{font-style:italic;font-size:24px;color:var(--muted);margin-top:10px}
+.head .frase{font-size:66px;line-height:1.1;margin-bottom:6px}
+.head .conf{font-size:21px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink);font-weight:500}
+
+.btn{display:inline-block;background:var(--ink);color:var(--paper);font-style:italic;font-size:20px;padding:12px 30px;border-radius:40px;border:1px solid var(--ink);cursor:pointer;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.btn.ghost{background:rgba(252,250,244,.7);color:var(--ink)}
+
+/* LUGAR */
+.place{position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.info{display:flex;flex-direction:column;gap:30px;text-align:center;align-items:center}
+.info .lab{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+.info .val{font-size:32px;color:var(--ink);font-weight:500;line-height:1.2}
+.info .val i{display:block;font-size:.72em;font-weight:400;color:var(--text);margin-top:6px}
+.btns{display:flex;gap:12px;justify-content:center}
+.map{position:relative;z-index:1;margin:34px;height:440px;border-radius:4px;overflow:hidden;box-shadow:0 18px 40px rgba(60,60,40,.12);background:#E8E4D8}
+.map iframe{width:100%;height:100%;border:0;filter:saturate(.55) sepia(.12) contrast(.97)}
+
+/* FORM */
+.form{position:relative;z-index:2;max-width:900px;margin:0 auto;background:rgba(252,250,244,.94);padding:56px 60px;border-radius:6px;box-shadow:0 20px 60px rgba(80,70,40,.08);text-align:center}
+.field{margin-bottom:28px}
+label.f,.f{display:block;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.inp{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:8px 0;font-size:21px;text-align:center;color:var(--ink);outline:none;border-radius:0}
+.inp:focus{border-bottom-color:var(--ink)}
+.inp::placeholder{color:#A3A69F;font-style:italic}
+textarea.inp{resize:vertical;min-height:70px}
+.choice{display:flex;gap:16px}
+.choice button{flex:1;border:1px solid var(--line);padding:14px;font-style:italic;font-size:21px;color:var(--ink);border-radius:40px;background:var(--paper);cursor:pointer}
+.choice button[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.guest{position:relative;margin-top:30px;padding:26px 28px;border-radius:6px;background:rgba(220,232,228,.45)}
+.guest.comp{background:rgba(236,224,200,.4)}
+.guest h3{font-family:'Ephesis';font-weight:400;font-size:42px;line-height:1;color:var(--ink);margin-bottom:12px}
+.guest .rm{position:absolute;right:16px;top:14px;background:none;border:0;font-style:italic;font-size:15px;color:var(--muted);cursor:pointer}
+.guest .field{margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;justify-content:center}
+.chip{border:1px solid var(--line);border-radius:30px;padding:5px 16px;font-size:17px;color:var(--text);background:var(--paper);cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--teal);background:var(--teal);color:#fff}
+.otra{display:none;margin-top:12px}
+.otra.on{display:block}
+.add{display:block;width:100%;border:1px dashed var(--teal);background:none;padding:16px;font-style:italic;color:var(--teal);margin:26px 0 30px;border-radius:40px;cursor:pointer;font-size:21px}
+.hide{display:none!important}
+.submit{margin-top:36px}
+.submit .btn{font-size:22px;padding:14px 50px}
+.submit .btn[disabled]{opacity:.5;cursor:wait}
+.note{font-size:16px;color:var(--muted);font-style:italic;margin-top:14px}
+.msg{margin-top:18px;font-style:italic;font-size:20px;color:var(--ink)}
+.msg.err{color:#8A4B3B}
+.thanks{padding:40px 0}
+.thanks .script{font-size:60px;line-height:1.1}
+
+/* REGALO */
+.gift{text-align:center;padding-top:150px;padding-bottom:150px}
+.gift::before{content:"";position:absolute;left:-60px;right:-60px;top:40px;bottom:40px;background:url(img/franja-verde.webp) center/100% 100% no-repeat;z-index:0}
+.gift .head{margin-bottom:30px}
+.giftcard{position:relative;z-index:2;max-width:940px;margin:10px auto 0;padding:30px 40px 10px}
+.giftcard p{font-style:italic;font-size:31px;line-height:1.45;color:var(--ink)}
+.iban{margin:44px auto 0;display:inline-flex;gap:26px;align-items:center;background:rgba(252,250,244,.92);padding:20px 34px;border-radius:60px;box-shadow:0 10px 30px rgba(60,80,70,.1)}
+.iban .num{font-size:30px;letter-spacing:.04em;color:var(--ink);font-weight:500}
+.iban .btn{font-size:16px;padding:7px 20px}
+
+footer{position:relative;text-align:center;padding:40px 40px 80px}
+footer .ilu{position:relative;z-index:1;width:520px;max-width:100%;height:auto;display:block;margin:0 auto -30px}
+footer .small{position:relative;z-index:1;margin-top:28px;font-size:18px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* MÓVIL */
+@media (max-width:760px){
+  body{font-size:18px}
+  .desk{display:none}.mob{display:block}
+  nav{padding:16px 20px}
+  nav .mono{font-size:32px}
+  .burger{display:block}
+  nav ul{display:none;position:absolute;right:16px;top:64px;flex-direction:column;gap:14px;background:var(--paper);padding:18px 24px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+  nav ul.open{display:flex}
+  .hero{grid-template-columns:1fr;padding:10px 18px}
+  .hero h1{font-size:74px}
+  .hero h2{font-size:27px;margin-top:14px}
+  .hero .sub{font-size:38px}
+  .stroke{width:180px}
+  .datebox{margin-top:26px}
+  .datebox .l,.datebox .r{font-size:18px}
+  .datebox .l{padding-right:8px}.datebox .r{padding-left:8px}
+  .datebox .c{padding:6px 20px}
+  .datebox .d{font-size:54px}.datebox .m{font-size:30px}.datebox .y{font-size:25px}
+  .hero .art img{width:112%;margin:20px 0 0 -6%}
+  .sep{height:90px}
+  section{padding:60px 20px}
+  .head{margin-bottom:36px}.head h2.script{font-size:58px}.head p{font-size:19px}
+  .head .frase{font-size:44px}
+  .head .conf{font-size:16px;letter-spacing:.24em}
+  .place{grid-template-columns:1fr;gap:30px}
+  .info{gap:20px}.info .val{font-size:26px}
+  .btns .btn{font-size:16px;padding:9px 16px;white-space:nowrap}
+  .map{margin:18px;height:300px}
+  .form{padding:30px 18px}
+  .choice{flex-direction:column;gap:10px}
+  .guest{padding:20px 16px}
+  .guest h3{font-size:34px}
+  .chip{font-size:15px;padding:4px 12px}
+  .gift{padding-top:90px;padding-bottom:90px}
+  .gift::before{top:20px;bottom:20px;left:-30px;right:-30px}
+  .giftcard{padding:10px 4px}
+  .giftcard p{font-size:23px}
+  .iban{flex-direction:column;gap:12px;padding:18px 22px;border-radius:24px}
+  .iban .num{font-size:17px;white-space:nowrap;letter-spacing:.02em}
+  footer{padding:30px 16px 50px}
+  footer .ilu{width:300px}
+  footer .small{font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<img class="w desk" src="img/esquina-ocre.webp" alt="" style="left:0;top:0;width:900px">
+<img class="w desk" src="img/esquina-verde.webp" alt="" style="right:0;top:0;width:620px;transform:scaleX(-1);opacity:.8">
+<img class="w mob" src="img/esquina-ocre.webp" alt="" style="left:0;top:0;width:330px">
+
+<nav>
+  <a class="mono" href="#">L &amp; R</a>
+  <button class="burger" aria-expanded="false" aria-controls="menu">Menú ☰</button>
+  <ul id="menu">
+    <li><a href="#lugar">El lugar</a></li>
+    <li><a href="#regalo">Regalo</a></li>
+    <li><a class="cta" href="#confirmar">Confirmar asistencia</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="txt">
+    <h1 class="script">Laura y Rafa</h1>
+    <h2>Nuestro destino estaba escrito</h2>
+    <div class="stroke"></div>
+    <div class="sub script">¡Nos casamos!</div>
+    <div class="datebox">
+      <div class="l">Te esperamos<br>a las 13.00</div>
+      <div class="c"><div class="d">13</div><div class="m">marzo</div><div class="y">2027</div></div>
+      <div class="r">En Hacienda<br>Almoguera</div>
+    </div>
+  </div>
+  <div class="art"><img src="img/acu.webp" width="1072" height="1396" alt="Acuarela de un castillo y una fuente"></div>
+</header>
+
+<div class="sep" role="presentation"></div>
+
+<section id="lugar">
+  <div class="head"><h2 class="script">El lugar</h2><p>Te esperamos para celebrarlo juntos</p></div>
+  <div class="place">
+    <div class="info">
+      <div><div class="lab">Día</div><div class="val">Sábado, 13 de marzo de 2027</div></div>
+      <div><div class="lab">Hora</div><div class="val">13.00 h</div></div>
+      <div><div class="lab">Lugar</div><div class="val">Hacienda Almoguera<i>Carretera Vieja de Los Barrios<br>11370 Los Barrios, Cádiz</i></div></div>
+      <div class="btns">
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hacienda+Almoguera%2C+Los+Barrios%2C+C%C3%A1diz">Cómo llegar</a>
+        <button class="btn ghost" id="cal">Añadir al calendario</button>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Mapa de Hacienda Almoguera" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Hacienda+Almoguera,+Los+Barrios,+C%C3%A1diz&amp;z=13&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="sep" role="presentation"></div>
+
+<section id="confirmar">
+  <div class="head">
+    <div class="frase script">Queremos que seas parte de nuestro día</div>
+    <div class="stroke"></div>
+    <h2 class="conf">Confirma tu asistencia</h2>
+  </div>
+
+  <form class="form" id="rsvp" novalidate>
+    <div class="field">
+      <label class="f" for="nombre">Nombre y apellidos</label>
+      <input class="inp" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required>
+    </div>
+
+    <span class="f">¿Vendrás?</span>
+    <div class="choice" role="group" aria-label="¿Vendrás?">
+      <button type="button" data-asiste="si" aria-pressed="false">Sí, allí estaré</button>
+      <button type="button" data-asiste="no" aria-pressed="false">No podré ir</button>
+    </div>
+
+    <div id="siBlock" class="hide">
+      <div class="guest" data-person="titular">
+        <h3>Alergias e intolerancias</h3>
+        <div class="chips"></div>
+        <input class="inp otra" placeholder="¿Cuál?" aria-label="Otra alergia o intolerancia">
+      </div>
+      <div id="comps"></div>
+      <button type="button" class="add" id="addComp">+ Añadir acompañante</button>
+    </div>
+
+    <div class="field" style="margin-top:26px">
+      <label class="f" for="mensaje">Un mensaje para los novios (opcional)</label>
+      <textarea class="inp" id="mensaje" name="mensaje" placeholder="Escribe aquí…"></textarea>
+    </div>
+
+    <div class="submit">
+      <button class="btn" type="submit">Enviar confirmación</button>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+      <div class="note">Si necesitas cambiar algo, vuelve a enviarla con el mismo nombre</div>
+    </div>
+  </form>
+</section>
+
+<div class="sep" role="presentation"></div>
+
+<section class="gift" id="regalo">
+  <div class="head"><h2 class="script">Regalo</h2></div>
+  <div class="giftcard">
+    <p>Teneros a nuestro lado en este día es, sin duda, el mejor regalo.</p>
+    <div class="stroke" style="margin:18px auto"></div>
+    <p>Si queréis ayudarnos a hacer aún más especial nuestra luna de miel, cualquier detalle será recibido con muchísima ilusión.</p>
+    <div class="iban"><span class="num" id="iban">ES39 0182 3219 1502 0189 2676</span><button class="btn" id="copy">Copiar</button></div>
+  </div>
+</section>
+
+<footer>
+  <img class="w desk" src="img/esquina-ocre.webp" alt="" style="left:0;bottom:0;width:700px;transform:scaleY(-1)">
+  <img class="w desk" src="img/esquina-verde.webp" alt="" style="right:0;bottom:0;width:700px;transform:scaleX(-1) scaleY(-1)">
+  <img class="w mob" src="img/esquina-verde.webp" alt="" style="right:0;bottom:0;width:300px;transform:scaleX(-1) scaleY(-1)">
+  <img class="ilu" src="img/acu.webp" width="1072" height="1396" alt="" loading="lazy">
+  <div class="small">Laura y Rafa · 13 de marzo de 2027</div>
+</footer>
+</div>
+
+<script>
+// URL de la aplicación web de Google Apps Script (ver LEEME.md)
+const ENDPOINT = '';
+
+const ALERGIAS = ['Ninguna','Gluten','Lactosa','Frutos secos','Marisco','Pescado','Huevo','Vegetariano','Vegano','Otra'];
+
+// menú móvil
+const burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+menu.addEventListener('click', e => { if (e.target.closest('a')) menu.classList.remove('open'); });
+
+// chips de alergias
+function buildChips(guest) {
+  const box = guest.querySelector('.chips'), otra = guest.querySelector('.otra');
+  ALERGIAS.forEach(a => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = a === 'Otra' ? 'Otra…' : a;
+    b.dataset.v = a; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      if (a === 'Ninguna' && on) box.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+      if (a !== 'Ninguna' && on) box.querySelector('[data-v="Ninguna"]').setAttribute('aria-pressed', 'false');
+      b.setAttribute('aria-pressed', on);
+      otra.classList.toggle('on', box.querySelector('[data-v="Otra"]').getAttribute('aria-pressed') === 'true');
+    });
+    box.appendChild(b);
+  });
+}
+function readGuest(guest) {
+  const sel = [...guest.querySelectorAll('.chip[aria-pressed=true]')].map(c => c.dataset.v);
+  const otra = guest.querySelector('.otra');
+  return { alergias: sel.filter(v => v !== 'Otra').join(', '), otra: sel.includes('Otra') ? otra.value.trim() : '' };
+}
+buildChips(document.querySelector('[data-person=titular]'));
+
+// asistencia
+let asiste = '';
+const siBlock = document.getElementById('siBlock');
+document.querySelectorAll('[data-asiste]').forEach(b => b.addEventListener('click', () => {
+  asiste = b.dataset.asiste;
+  document.querySelectorAll('[data-asiste]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  siBlock.classList.toggle('hide', asiste !== 'si');
+}));
+
+// acompañantes
+const comps = document.getElementById('comps');
+function renumber() { comps.querySelectorAll('.guest h3').forEach((h, i) => h.textContent = 'Acompañante ' + (i + 1)); }
+document.getElementById('addComp').addEventListener('click', () => {
+  const g = document.createElement('div');
+  g.className = 'guest comp';
+  g.innerHTML = '<h3></h3><button type="button" class="rm">Quitar ✕</button>'
+    + '<div class="field"><label class="f">Nombre y apellidos</label><input class="inp cname" placeholder="Nombre del acompañante"></div>'
+    + '<span class="f">Alergias e intolerancias</span><div class="chips"></div>'
+    + '<input class="inp otra" placeholder="¿Cuál?" aria-label="Otra alergia o intolerancia">';
+  g.querySelector('.rm').addEventListener('click', () => { g.remove(); renumber(); });
+  buildChips(g);
+  comps.appendChild(g); renumber();
+  g.querySelector('.cname').focus();
+});
+
+// envío
+const form = document.getElementById('rsvp'), msg = document.getElementById('msg');
+function say(t, err) { msg.textContent = t; msg.classList.toggle('err', !!err); }
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const nombre = form.nombre.value.trim();
+  if (!nombre) { say('Escribe tu nombre, por favor.', true); form.nombre.focus(); return; }
+  if (!asiste) { say('Dinos si vendrás.', true); return; }
+  const acompanantes = asiste === 'si' ? [...comps.querySelectorAll('.guest')].map(g => ({ nombre: g.querySelector('.cname').value.trim(), ...readGuest(g) })) : [];
+  if (acompanantes.some(a => !a.nombre)) { say('Falta el nombre de algún acompañante.', true); return; }
+  const data = { nombre, asiste, ...(asiste === 'si' ? readGuest(document.querySelector('[data-person=titular]')) : { alergias: '', otra: '' }), acompanantes, mensaje: form.mensaje.value.trim() };
+  if (!ENDPOINT) { say('El formulario aún no está conectado.', true); console.log(data); return; }
+  const btn = form.querySelector('[type=submit]');
+  btn.disabled = true; say('Enviando…');
+  try {
+    // text/plain evita la petición previa CORS que Apps Script no admite
+    const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || 'error');
+    form.innerHTML = '<div class="thanks"><div class="script">' + (asiste === 'si' ? '¡Gracias! Nos vemos el 13 de marzo' : 'Gracias por avisarnos, te echaremos de menos') + '</div></div>';
+  } catch (err) {
+    btn.disabled = false;
+    say('No se ha podido enviar. Inténtalo de nuevo en un momento.', true);
+  }
+});
+
+// calendario: .ics en Apple, Google Calendar en el resto
+document.getElementById('cal').addEventListener('click', () => {
+  const t = 'Boda de Laura y Rafa', loc = 'Hacienda Almoguera, Carretera Vieja de Los Barrios, 11370 Los Barrios, Cádiz';
+  if (/iPhone|iPad|Macintosh/.test(navigator.userAgent)) {
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//LauraRafa//ES','BEGIN:VEVENT','UID:boda-laura-rafa-20270313','DTSTAMP:20261022T000000Z',
+      'DTSTART;TZID=Europe/Madrid:20270313T130000','DTEND;TZID=Europe/Madrid:20270314T010000','SUMMARY:' + t,'LOCATION:' + loc.replace(/,/g, '\\,'),'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = 'boda-laura-rafa.ics'; a.click();
+  } else {
+    window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(t)
+      + '&dates=20270313T130000/20270314T010000&ctz=Europe/Madrid&location=' + encodeURIComponent(loc), '_blank', 'noopener');
+  }
+});
+
+// copiar IBAN
+document.getElementById('copy').addEventListener('click', async e => {
+  const iban = document.getElementById('iban').textContent.replace(/\s/g, '');
+  try { await navigator.clipboard.writeText(iban); e.target.textContent = 'Copiado'; }
+  catch { e.target.textContent = iban; }
+  setTimeout(() => e.target.textContent = 'Copiar', 2000);
+});
+</script>
+</body>
+</html>
