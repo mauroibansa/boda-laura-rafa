@@ -1,4 +1,4 @@
-// Recibe las confirmaciones de la landing y las guarda en la hoja "Confirmaciones".
+// Recibe las confirmaciones de la landing y las guarda en la hoja "Confirmaciones" (o en la primera pestaña).
 // Una fila por persona. Si alguien reenvía con el mismo nombre, se sustituyen sus filas.
 
 const HOJA = 'Confirmaciones';
@@ -34,10 +34,9 @@ function doPost(e) {
 
 function hoja() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sh = ss.getSheetByName(HOJA);
-  if (!sh) {
-    sh = ss.insertSheet(HOJA);
-    sh.appendRow(CABECERA);
+  const sh = ss.getSheetByName(HOJA) || ss.getSheets()[0];
+  if (sh.getRange(1, 1).getValue() !== CABECERA[0]) sh.getRange(1, 1, 1, CABECERA.length).setValues([CABECERA]);
+  if (sh.getFrozenRows() !== 1) {
     sh.setFrozenRows(1);
     sh.getRange(1, 1, 1, CABECERA.length).setFontWeight('bold');
   }
