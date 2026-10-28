@@ -31,7 +31,7 @@ Dominio propio `laurayrafa.es` (DonDominio, renovación manual). DNS:
 
 Después, en Settings → Pages → Custom domain: `laurayrafa.es` y marcar Enforce HTTPS.
 
-Para retirar la web tras la boda: Settings → Pages → desactivar (o archivar/borrar el repositorio). El dominio caduca solo al no renovarlo.
+La web se oculta sola desde el 14 de marzo de 2027 a las 00:00 (hora de Madrid): un script en index.html la deja en blanco y con noindex. Para quitarla del todo: Settings → Pages → Unpublish site (o archivar/borrar el repositorio). El dominio caduca solo al no renovarlo.
 
 ## Pendiente
 
