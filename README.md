@@ -15,14 +15,27 @@ Contenido: `index.html` (la web), `img/` (recursos) y `apps-script.gs` (lo que g
 
 Cada confirmación crea una fila por persona (titular y acompañantes) con sus alergias, y en los acompañantes si es niño/a y su edad. Si alguien vuelve a enviar con el mismo nombre, se sustituyen sus filas anteriores.
 
-## 2. Publicar la web (Netlify, gratis)
+## 2. Publicación
 
-1. Entra en https://app.netlify.com/drop
-2. Arrastra la carpeta `landing-boda` completa.
-3. Netlify da una dirección del tipo `nombre-aleatorio.netlify.app`. En Site settings puedes cambiarla, por ejemplo `laurayrafa.netlify.app`, o conectar un dominio propio.
+La web se publica con GitHub Pages desde la rama `main` del repositorio `mauroibansa/boda-laura-rafa`: https://mauroibansa.github.io/boda-laura-rafa/
+
+Dominio propio `laurayrafa.es` (DonDominio, renovación manual). DNS:
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | mauroibansa.github.io |
+
+Después, en Settings → Pages → Custom domain: `laurayrafa.es` y marcar Enforce HTTPS.
+
+Para retirar la web tras la boda: Settings → Pages → desactivar (o archivar/borrar el repositorio). El dominio caduca solo al no renovarlo.
 
 ## Pendiente
 
 - Guirnalda a tamaño completo: sustituir `img/guirnalda.webp` (la actual es una miniatura).
 - Punto kilométrico de la finca (km 4 o km 5): ahora la dirección no lo indica.
+- Formulario conectado a la hoja "Confirmaciones" (Drive de Mauro, carpeta MAMMUT/Boda Laura y Rafa). Si se cambia el script: Implementar → Gestionar implementaciones → editar → Nueva versión, para mantener la URL.
 - Tipografías: se usan Ephesis y Cormorant Garamond (Google Fonts). Las de la invitación (Hamilton Script y Alize) necesitan licencia web.
