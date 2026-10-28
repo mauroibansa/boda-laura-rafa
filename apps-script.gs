@@ -2,7 +2,7 @@
 // Una fila por persona. Si alguien reenvía con el mismo nombre, se sustituyen sus filas.
 
 const HOJA = 'Confirmaciones';
-const CABECERA = ['Fecha', 'Grupo (quien confirma)', 'Persona', 'Tipo', 'Asiste', 'Alergias e intolerancias', 'Otra', 'Mensaje'];
+const CABECERA = ['Fecha', 'Grupo (quien confirma)', 'Persona', 'Tipo', 'Niño/a', 'Edad', 'Asiste', 'Alergias e intolerancias', 'Otra', 'Mensaje'];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -17,9 +17,11 @@ function doPost(e) {
 
     const ahora = new Date();
     const asiste = d.asiste === 'si' ? 'Sí' : 'No';
-    const filas = [[ahora, nombre, nombre, 'Titular', asiste, limpio(d.alergias), limpio(d.otra), limpio(d.mensaje, 1000)]];
+    const filas = [[ahora, nombre, nombre, 'Titular', 'No', '', asiste, limpio(d.alergias), limpio(d.otra), limpio(d.mensaje, 1000)]];
     (d.acompanantes || []).slice(0, 10).forEach(a => {
-      filas.push([ahora, nombre, limpio(a.nombre, 120), 'Acompañante', asiste, limpio(a.alergias), limpio(a.otra), '']);
+      const nino = a.nino === true;
+      const edad = nino && /^\d{1,2}$/.test(String(a.edad)) ? Number(a.edad) : '';
+      filas.push([ahora, nombre, limpio(a.nombre, 120), 'Acompañante', nino ? 'Sí' : 'No', edad, asiste, limpio(a.alergias), limpio(a.otra), '']);
     });
     sh.getRange(sh.getLastRow() + 1, 1, filas.length, CABECERA.length).setValues(filas);
     return json({ ok: true });

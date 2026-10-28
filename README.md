@@ -13,7 +13,7 @@ Contenido: `index.html` (la web), `img/` (recursos) y `apps-script.gs` (lo que g
 5. Autoriza los permisos que pide Google y copia la URL de la aplicación web (termina en `/exec`).
 6. En `index.html`, busca `const ENDPOINT = '';` y pega la URL entre las comillas.
 
-Cada confirmación crea una fila por persona (titular y acompañantes) con sus alergias. Si alguien vuelve a enviar con el mismo nombre, se sustituyen sus filas anteriores.
+Cada confirmación crea una fila por persona (titular y acompañantes) con sus alergias, y en los acompañantes si es niño/a y su edad. Si alguien vuelve a enviar con el mismo nombre, se sustituyen sus filas anteriores.
 
 ## 2. Publicar la web (Netlify, gratis)
 

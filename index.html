@@ -85,6 +85,14 @@ textarea.inp{resize:vertical;min-height:70px}
 .guest h3{font-family:'Ephesis';font-weight:400;font-size:42px;line-height:1;color:var(--ink);margin-bottom:12px}
 .guest .rm{position:absolute;right:16px;top:14px;background:none;border:0;font-style:italic;font-size:15px;color:var(--muted);cursor:pointer}
 .guest .field{margin-bottom:14px}
+.kid{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 16px}
+.kid label{display:inline-flex;align-items:center;gap:8px;font-style:italic;font-size:19px;color:var(--ink);cursor:pointer}
+.kid input[type=checkbox]{width:18px;height:18px;accent-color:var(--teal)}
+.kid .edad{display:none;align-items:center;gap:8px;font-style:italic;font-size:19px}
+.kid .edad.on{display:inline-flex}
+.kid .edad input{width:64px;font-size:19px;padding:4px 0}
+.kid .edad input::-webkit-inner-spin-button{-webkit-appearance:none}
+.kid .edad input{-moz-appearance:textfield}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;justify-content:center}
 .chip{border:1px solid var(--line);border-radius:30px;padding:5px 16px;font-size:17px;color:var(--text);background:var(--paper);cursor:pointer}
 .chip[aria-pressed=true]{border-color:var(--teal);background:var(--teal);color:#fff}
@@ -148,6 +156,8 @@ footer .small{position:relative;z-index:1;margin-top:28px;font-size:18px;letter-
   .choice{flex-direction:column;gap:10px}
   .guest{padding:20px 16px}
   .guest h3{font-size:34px}
+  .guest.comp{padding-top:42px}
+  .guest .rm{top:12px;right:14px}
   .chip{font-size:15px;padding:4px 12px}
   .gift{padding-top:90px;padding-bottom:90px}
   .gift::before{top:20px;bottom:20px;left:-30px;right:-30px}
@@ -329,8 +339,11 @@ document.getElementById('addComp').addEventListener('click', () => {
   g.className = 'guest comp';
   g.innerHTML = '<h3></h3><button type="button" class="rm">Quitar ✕</button>'
     + '<div class="field"><label class="f">Nombre y apellidos</label><input class="inp cname" placeholder="Nombre del acompañante"></div>'
+    + '<div class="kid"><label><input type="checkbox" class="cnino"> Es un niño/a</label>'
+    + '<span class="edad">Edad <input class="inp cedad" type="number" inputmode="numeric" min="0" max="17" aria-label="Edad"> años</span></div>'
     + '<span class="f">Alergias e intolerancias</span><div class="chips"></div>'
     + '<input class="inp otra" placeholder="¿Cuál?" aria-label="Otra alergia o intolerancia">';
+  g.querySelector('.cnino').addEventListener('change', e => g.querySelector('.edad').classList.toggle('on', e.target.checked));
   g.querySelector('.rm').addEventListener('click', () => { g.remove(); renumber(); });
   buildChips(g);
   comps.appendChild(g); renumber();
@@ -345,8 +358,12 @@ form.addEventListener('submit', async e => {
   const nombre = form.nombre.value.trim();
   if (!nombre) { say('Escribe tu nombre, por favor.', true); form.nombre.focus(); return; }
   if (!asiste) { say('Dinos si vendrás.', true); return; }
-  const acompanantes = asiste === 'si' ? [...comps.querySelectorAll('.guest')].map(g => ({ nombre: g.querySelector('.cname').value.trim(), ...readGuest(g) })) : [];
+  const acompanantes = asiste === 'si' ? [...comps.querySelectorAll('.guest')].map(g => {
+    const nino = g.querySelector('.cnino').checked;
+    return { nombre: g.querySelector('.cname').value.trim(), nino, edad: nino ? g.querySelector('.cedad').value.trim() : '', ...readGuest(g) };
+  }) : [];
   if (acompanantes.some(a => !a.nombre)) { say('Falta el nombre de algún acompañante.', true); return; }
+  if (acompanantes.some(a => a.nino && !/^\d{1,2}$/.test(a.edad))) { say('Indica la edad de cada niño o niña.', true); return; }
   const data = { nombre, asiste, ...(asiste === 'si' ? readGuest(document.querySelector('[data-person=titular]')) : { alergias: '', otra: '' }), acompanantes, mensaje: form.mensaje.value.trim() };
   if (!ENDPOINT) { say('El formulario aún no está conectado.', true); console.log(data); return; }
   const btn = form.querySelector('[type=submit]');
