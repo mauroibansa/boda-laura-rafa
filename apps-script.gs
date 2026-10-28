@@ -61,7 +61,7 @@ function limpio(v, max) {
 }
 
 function normal(s) {
-  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+  return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
 }
 
 function json(o) {
