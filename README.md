@@ -36,6 +36,6 @@ Para retirar la web tras la boda: Settings → Pages → desactivar (o archivar/
 ## Pendiente
 
 - Guirnalda sustituida el 28/10/2026 por versión de mayor resolución (desde captura de Canva, fondo quitado).
-- Punto kilométrico de la finca (km 4 o km 5): ahora la dirección no lo indica.
+- Dirección según Google Maps: Ctra. Vieja a Los Barrios, 11370 Los Barrios, Cádiz (plus code 5G75+R8). Sin punto kilométrico.
 - Formulario conectado a la hoja "Confirmaciones" (Drive de Mauro, carpeta MAMMUT/Boda Laura y Rafa). Si se cambia el script: Implementar → Gestionar implementaciones → editar → Nueva versión, para mantener la URL.
 - Tipografías: se usan Ephesis y Cormorant Garamond (Google Fonts). Las de la invitación (Hamilton Script y Alize) necesitan licencia web.
